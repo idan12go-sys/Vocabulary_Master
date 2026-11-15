@@ -477,6 +477,58 @@ select,input{min-height:48px;border-radius:13px;padding:10px 13px;background:var
 }
 @media(prefers-reduced-motion:reduce){.page.active,.menu-row,.simple-progress>span{animation:none!important;transition:none!important}}
 
+
+
+/* CENTERED NAVIGATION FIX — four equal-width tabs on every screen */
+.bottom-nav{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
+  justify-content:initial;
+  gap:8px;
+  width:min(100%,560px);
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+  box-sizing:border-box;
+}
+.bottom-nav .nav-btn{
+  width:100%;
+  max-width:none;
+  min-width:0;
+  flex:none;
+  justify-self:stretch;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-sizing:border-box;
+  padding-left:4px;
+  padding-right:4px;
+}
+@media(max-width:759px){
+  .bottom-nav{
+    position:fixed;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    width:min(calc(100% - 16px),560px);
+    max-width:560px;
+    margin:0;
+  }
+}
+@media(min-width:760px){
+  .bottom-nav{
+    position:static;
+    left:auto;
+    right:auto;
+    transform:none;
+    width:min(100%,560px);
+    margin:0 auto 22px;
+  }
+}
+
 </style>
 </head>
 <body data-theme="dark">
