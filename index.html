@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101522">
 <meta name="description" content="Vocabulary Master — practise, play and prepare for your English vocabulary test.">
-<title>Vocabulary Master — Studio Edition</title>
+<title>Vocabulary Master — Simple Edition</title>
 <style>
 :root{
   --bg:#0d1220;--surface:#151d2e;--surface2:#1c2740;--surface3:#24314d;
@@ -369,6 +369,114 @@ body{
  .page.active,.word-card,.choice,.word-row,.toast.show,.celebration-layer i{animation:none!important}
 }
 
+
+/* SIMPLE STUDY EXPERIENCE — roomy layout, fewer choices, readable type */
+:root{--radius:22px;--shadow:0 8px 28px rgba(22,34,58,.07)}
+body{font-size:17px;line-height:1.55;background:var(--bg)}
+.app{max-width:760px;padding:18px 22px 112px}
+.topbar{margin:4px 0 30px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.logo{width:42px;height:42px;box-shadow:none;border-radius:14px}
+.brand h1{font-size:19px;letter-spacing:-.03em}
+.brand small{font-size:12px}
+.top-actions{gap:8px}
+.icon-btn,.pill-btn{min-height:42px;min-width:42px;border-radius:14px;font-size:14px;box-shadow:none}
+#settingsOpen{display:none}
+.page{display:none;max-width:660px;margin:0 auto}
+.page.active{display:block;animation:quietAppear .24s ease both}
+@keyframes quietAppear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.welcome-block{padding:12px 2px 24px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--accent);margin:0 0 10px}
+.welcome-block h2{font-size:clamp(29px,6vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px;max-width:550px}
+.welcome-block p:last-child{font-size:17px;color:var(--muted);max-width:490px;margin:0}
+.progress-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:24px;margin:5px 0 25px;box-shadow:none}
+.progress-card-top{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+.quiet-label{font-size:14px;color:var(--muted);font-weight:600}
+.big-progress{display:flex;align-items:baseline;gap:6px;margin-top:6px}
+.big-progress strong{font-size:46px;letter-spacing:-.05em;line-height:1.1}
+.big-progress span{font-size:17px;color:var(--muted)}
+.progress-percent{font-weight:800;color:var(--accent);font-size:20px}
+.simple-progress{height:11px;border-radius:20px;background:var(--surface3);overflow:hidden}
+.simple-progress>span{border-radius:20px;transition:width .65s cubic-bezier(.2,.75,.2,1)}
+.progress-foot{display:flex;justify-content:space-between;gap:12px;margin-top:11px;font-size:13px;color:var(--muted)}
+.home-actions{display:flex;flex-direction:column;gap:12px}
+.main-action{display:flex;align-items:center;gap:15px;width:100%;min-height:78px;padding:15px 18px;border-radius:19px;text-align:start;box-shadow:none}
+.main-action>span:nth-child(2){display:flex;flex-direction:column;align-items:flex-start;flex:1;gap:2px}
+.main-action b{font-size:18px;font-weight:750}
+.main-action small{font-size:13px;font-weight:500;opacity:.82}
+.action-symbol{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.16);font-size:21px;flex:none}
+.secondary .action-symbol{background:var(--surface3)}
+.action-arrow{font-size:30px;font-weight:300;opacity:.7}
+.text-action{display:flex;justify-content:space-between;align-items:center;background:transparent;color:var(--accent);border:0;padding:13px 4px;font-size:15px;font-weight:700}
+.page-title{font-size:30px;line-height:1.2;letter-spacing:-.035em;margin:12px 0 8px}
+.page-sub{font-size:15px;line-height:1.55;color:var(--muted);margin:0 0 25px;max-width:560px}
+.quiet-options{margin:0 0 20px;border:1px solid var(--line);border-radius:15px;background:var(--surface);overflow:hidden}
+.quiet-options summary{list-style:none;cursor:pointer;padding:14px 17px;font-size:14px;font-weight:650;color:var(--muted);display:flex;align-items:center;justify-content:space-between}
+.quiet-options summary::-webkit-details-marker{display:none}
+.quiet-options summary:after{content:"＋";font-size:19px;color:var(--accent)}
+.quiet-options[open] summary:after{content:"−"}
+.options-body{padding:0 16px 16px;display:flex;align-items:end;gap:12px;flex-wrap:wrap}
+.options-body label{display:flex;flex-direction:column;gap:5px;flex:1;min-width:140px;color:var(--muted);font-size:12px;font-weight:650}
+.options-body select{width:100%;min-height:44px}
+select,input{min-height:48px;border-radius:13px;padding:10px 13px;background:var(--surface2);border:1px solid var(--line);color:var(--text);font-size:15px}
+.quiz-start-card{background:transparent;border:0;padding:0;margin:0 0 18px}
+.quiz-start-card>p{color:var(--muted);font-size:15px;margin:0 0 16px}
+.quiz-result-area{padding:18px;border-radius:19px;box-shadow:none}
+.simple-menu-list{display:flex;flex-direction:column;gap:10px}
+.menu-row{display:flex;align-items:center;gap:14px;width:100%;min-height:76px;padding:13px 16px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:17px;text-align:start;box-shadow:none;transition:background .16s ease,border-color .16s ease,transform .16s ease}
+.menu-row:hover{transform:translateY(-1px);border-color:var(--accent);background:var(--surface2)}
+.menu-row>span:nth-child(2){display:flex;flex-direction:column;flex:1;gap:2px}
+.menu-row b{font-size:16px;font-weight:700}
+.menu-row small{font-size:13px;line-height:1.4;color:var(--muted)}
+.menu-row>span:last-child{font-size:26px;color:var(--muted);font-weight:300}
+.menu-symbol{width:43px;height:43px;display:grid;place-items:center;background:var(--surface2);border-radius:14px;font-size:19px;flex:none}
+.more-list{margin-top:5px}
+#wordSearch{width:100%;font-size:17px;margin-bottom:14px;min-height:54px}
+.word-list{display:flex;flex-direction:column;gap:9px}
+.word-row{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--surface);box-shadow:none}
+.word-row-main b{font-size:21px;line-height:1.3}
+.word-row-main small{font-size:14px;line-height:1.6}
+.status-select{min-height:43px}
+.word-card{min-height:300px;border-radius:25px;margin:15px 0 20px;box-shadow:none}
+.word-main{font-size:clamp(38px,8vw,58px);line-height:1.2;overflow-wrap:anywhere}
+.word-translation{font-size:clamp(27px,6vw,38px);line-height:1.35;overflow-wrap:anywhere}
+.pos-tag{font-size:14px;padding:8px 13px}
+.card-hint{font-size:13px}
+.card-controls{gap:10px}
+.card-controls button{min-height:53px;font-size:15px;border-radius:14px}
+.round-count{font-size:13px;margin:14px 0;color:var(--muted)}
+.choice-grid{gap:12px}
+.choice{min-height:70px;padding:17px;font-size:17px;line-height:1.4;border-radius:16px}
+.bottom-nav{max-width:760px;left:50%;transform:translateX(-50%);width:calc(100% - 24px);bottom:10px;border:1px solid var(--line);border-radius:19px;padding:8px 9px calc(8px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:0 8px 30px rgba(0,0,0,.10);backdrop-filter:blur(18px);gap:5px}
+.nav-btn{font-size:12px;min-height:54px;border-radius:13px;gap:3px}
+.nav-btn .nav-icon{font-size:20px;line-height:1.1}
+.nav-btn.active{background:var(--surface2);color:var(--accent)}
+.settings-row{padding:17px 0}
+.panel{box-shadow:none}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:560px){
+ .app{padding:12px 16px 105px}
+ .topbar{margin:3px 0 21px;padding-bottom:12px}
+ .brand h1{font-size:17px}.brand small{font-size:11px}
+ .logo{width:38px;height:38px}
+ .welcome-block{padding:10px 1px 20px}
+ .welcome-block h2{font-size:32px}
+ .welcome-block p:last-child{font-size:16px}
+ .progress-card{padding:20px;border-radius:21px;margin-bottom:21px}
+ .big-progress strong{font-size:41px}
+ .main-action{min-height:74px;padding:13px 14px;gap:12px}
+ .main-action b{font-size:17px}.main-action small{font-size:12px}
+ .action-symbol{width:39px;height:39px}
+ .page-title{font-size:27px}
+ .word-card{min-height:280px}
+ .card-controls{grid-template-columns:1fr 1fr}
+ .options-body{flex-direction:column;align-items:stretch}
+ .options-body label{width:100%}
+ .menu-row{min-height:72px;padding:12px}
+ .menu-row b{font-size:15px}.menu-row small{font-size:12px}
+ .bottom-nav{bottom:6px;width:calc(100% - 16px)}
+}
+@media(prefers-reduced-motion:reduce){.page.active,.menu-row,.simple-progress>span{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body data-theme="dark">
@@ -386,91 +494,84 @@ body{
   </header>
 
   <nav class="bottom-nav" aria-label="Main navigation">
-    <button class="nav-btn active" data-page="home"><span class="nav-icon" aria-hidden="true">🏠</span><span data-i18n="navHome">Home</span></button>
-    <button class="nav-btn" data-page="learn"><span class="nav-icon" aria-hidden="true">📚</span><span data-i18n="navLearn">Learn</span></button>
-    <button class="nav-btn" data-page="quiz"><span class="nav-icon" aria-hidden="true">🎯</span><span data-i18n="navQuiz">Quiz</span></button>
-    <button class="nav-btn" data-page="games"><span class="nav-icon" aria-hidden="true">🎮</span><span data-i18n="navGames">Games</span></button>
-    <button class="nav-btn" data-page="words"><span class="nav-icon" aria-hidden="true">📖</span><span data-i18n="navWords">Words</span></button>
+    <button class="nav-btn active" data-page="home"><span class="nav-icon" aria-hidden="true">⌂</span><span data-i18n="navHome">Home</span></button>
+    <button class="nav-btn" data-page="learn"><span class="nav-icon" aria-hidden="true">▤</span><span data-i18n="navLearn">Learn</span></button>
+    <button class="nav-btn" data-page="quiz"><span class="nav-icon" aria-hidden="true">✓</span><span data-i18n="navQuiz">Practice</span></button>
+    <button class="nav-btn" data-page="more"><span class="nav-icon" aria-hidden="true">•••</span><span data-i18n="navMore">More</span></button>
   </nav>
 
   <main>
     <section class="page active" id="page-home">
-      <div class="hero">
-        <div class="hero-kicker" id="heroKicker">YOUR EXAM IS COMING</div>
-        <h2 id="heroTitle">Ready to master your vocabulary?</h2>
-        <p id="heroText">Learn the words you need, practise the difficult ones and track your progress.</p>
-        <div class="hero-bottom">
-          <div class="progress-wrap">
-            <div class="progress-label"><span id="progressLabel">Overall progress</span><b id="progressPct">0%</b></div>
-            <div class="progress"><span id="progressBar" style="width:0%"></span></div>
-          </div>
-          <button class="primary" id="heroStart">Start learning →</button>
+      <div class="welcome-block">
+        <p class="eyebrow" id="heroKicker">YOUR WORDS. YOUR PACE.</p>
+        <h2 id="heroTitle">Let's learn a little today.</h2>
+        <p id="heroText">Small steps make the words easier to remember.</p>
+      </div>
+      <section class="progress-card" aria-label="Learning progress">
+        <div class="progress-card-top">
+          <div><span class="quiet-label" id="progressLabel">Words mastered</span><div class="big-progress"><strong id="statMastered">0</strong><span> / <span id="statTotal">480</span></span></div></div>
+          <div class="progress-percent" id="progressPct">0%</div>
         </div>
-      </div>
-      <div class="stats">
-        <div class="stat good"><strong id="statMastered">0</strong><span><i class="dot"></i><span data-i18n="mastered">Mastered</span></span></div>
-        <div class="stat warn"><strong id="statLearning">0</strong><span><i class="dot"></i><span data-i18n="learning">Learning</span></span></div>
-        <div class="stat bad"><strong id="statNew">480</strong><span><i class="dot"></i><span data-i18n="notKnown">Not known yet</span></span></div>
-        <div class="stat"><strong id="statTotal">480</strong><span><i class="dot"></i><span data-i18n="totalWords">Total words</span></span></div>
-      </div>
-      <div class="section-head"><div><h3 id="quickTitle">Choose your practice</h3><p id="quickSub">A few minutes every day makes a difference.</p></div></div>
-      <div class="quick-grid">
-        <button class="action-card" data-go="learn"><span class="action-icon" aria-hidden="true">📚</span><b data-i18n="flashcards">Flashcards</b><small data-i18n="flashcardsDesc">Flip a card and check the meaning.</small></button>
-        <button class="action-card" data-go="quiz"><span class="action-icon" aria-hidden="true">🎯</span><b data-i18n="multipleChoice">Multiple choice</b><small data-i18n="multipleChoiceDesc">Choose the correct translation.</small></button>
-        <button class="action-card" data-go="games"><span class="action-icon" aria-hidden="true">🎮</span><b data-i18n="wordGames">Word games</b><small data-i18n="wordGamesDesc">Match words and solve scrambles.</small></button>
-        <button class="action-card" data-go="quiz" data-mode="exam"><span class="action-icon" aria-hidden="true">📝</span><b data-i18n="exam">Exam simulation</b><small data-i18n="examDesc">A test using your vocabulary list.</small></button>
-        <button class="action-card" data-go="learn" data-mode="review"><span class="action-icon" aria-hidden="true">🔁</span><b data-i18n="review">Review difficult words</b><small data-i18n="reviewDesc">Focus on words you missed.</small></button>
-        <button class="action-card" data-go="words"><span class="action-icon" aria-hidden="true">📖</span><b data-i18n="wordList">Word list</b><small data-i18n="wordListDesc">Search and update your word status.</small></button>
-      </div>
-      <div class="section-head"><div><h3 id="dailyTitle">Your next step</h3><p id="dailySub">Start with a quick diagnostic or choose words manually.</p></div></div>
-      <div class="panel">
-        <div style="display:flex;gap:12px;align-items:center">
-          <div class="action-icon">◎</div><div style="flex:1"><b id="diagnosticTitle">20-word quick diagnostic</b><p id="diagnosticText" style="color:var(--muted);font-size:12px;margin:4px 0 0">Answer 20 questions to get an initial picture of what you know. You can still change every word manually.</p></div>
-        </div>
-        <button class="primary" style="width:100%;margin-top:15px" id="startDiagnostic">Start diagnostic</button>
+        <div class="progress simple-progress"><span id="progressBar" style="width:0%"></span></div>
+        <div class="progress-foot"><span id="homeMasteredLabel">Mastered</span><span id="homeRemaining">480 to go</span></div>
+        <span id="statLearning" class="sr-only">0</span><span id="statNew" class="sr-only">480</span>
+      </section>
+      <div class="home-actions">
+        <button class="primary main-action" id="heroStart"><span class="action-symbol">▤</span><span><b id="homeLearnLabel">Start learning</b><small id="homeLearnDesc">Study with simple flashcards</small></span><span class="action-arrow">›</span></button>
+        <button class="secondary main-action" id="homeQuickQuiz"><span class="action-symbol">✓</span><span><b id="homeQuickLabel">Quick practice</b><small id="homeQuickDesc">10 multiple-choice questions</small></span><span class="action-arrow">›</span></button>
+        <button class="text-action" data-go="more" id="homeMore"><span id="homeMoreLabel">More ways to study</span><span>›</span></button>
       </div>
     </section>
 
     <section class="page" id="page-learn">
       <h2 class="page-title" data-i18n="learnTitle">Flashcards</h2>
       <p class="page-sub" data-i18n="learnSub">Tap or press and hold the card to reveal its translation.</p>
-      <div class="toolbar">
-        <select id="learnFilter" aria-label="Word filter">
-          <option value="practice" data-i18n="filterPractice">Words to practise</option>
-          <option value="all" data-i18n="filterAll">All words</option>
-          <option value="new" data-i18n="filterNew">New words</option>
-          <option value="learning" data-i18n="filterLearning">Learning</option>
-          <option value="mastered" data-i18n="filterMastered">Mastered</option>
-        </select>
-        <select id="learnCount" aria-label="Words per session"><option value="10">10</option><option value="20" selected>20</option><option value="30">30</option><option value="all">All</option></select>
-        <button class="secondary" id="shuffleLearn" data-i18n="shuffle">Shuffle</button>
-      </div>
+      <details class="quiet-options">
+        <summary id="learnOptionsLabel">Study options</summary>
+        <div class="options-body">
+          <label><span data-i18n="filterLabel">Word group</span><select id="learnFilter" aria-label="Word filter">
+            <option value="practice" data-i18n="filterPractice">Words to practise</option>
+            <option value="all" data-i18n="filterAll">All words</option>
+            <option value="new" data-i18n="filterNew">New words</option>
+            <option value="learning" data-i18n="filterLearning">Learning</option>
+            <option value="mastered" data-i18n="filterMastered">Mastered</option>
+          </select></label>
+          <label><span data-i18n="sessionLength">Words per session</span><select id="learnCount" aria-label="Words per session"><option value="10" selected>10</option><option value="20">20</option><option value="30">30</option><option value="all">All</option></select></label>
+          <button class="secondary" id="shuffleLearn" data-i18n="shuffle">Shuffle</button>
+        </div>
+      </details>
       <div id="learnArea"></div>
     </section>
 
     <section class="page" id="page-quiz">
       <h2 class="page-title" data-i18n="quizTitle">Quiz</h2>
       <p class="page-sub" data-i18n="quizSub">Choose the correct meaning. Questions adapt to your progress.</p>
-      <div class="toolbar">
-        <select id="quizDirection">
-          <option value="en-he" data-i18n="enToHe">English → Hebrew</option>
-          <option value="he-en" data-i18n="heToEn">Hebrew → English</option>
-          <option value="mixed" data-i18n="mixed">Mixed directions</option>
-        </select>
-        <select id="quizLength"><option value="10">10</option><option value="20" selected>20</option><option value="all">All practice words</option></select>
-        <button class="primary" id="startQuiz" data-i18n="startQuiz">Start quiz</button>
+      <div class="quiz-start-card">
+        <p id="quizPrompt">A short round is a great way to remember more.</p>
+        <button class="primary main-action" id="startQuiz"><span class="action-symbol">✓</span><span><b data-i18n="startQuiz">Start 10-question practice</b><small id="quizStartHint">10 questions · your progress is saved</small></span><span class="action-arrow">›</span></button>
       </div>
-      <div id="quizArea" class="panel"><div class="empty"><strong data-i18n="readyQuiz">Ready when you are</strong><span data-i18n="readyQuizDesc">Choose a direction and start a quiz.</span></div></div>
+      <details class="quiet-options">
+        <summary id="quizOptionsLabel">More options</summary>
+        <div class="options-body">
+          <label><span data-i18n="directionLabel">Question direction</span><select id="quizDirection">
+            <option value="en-he" data-i18n="enToHe">English → Hebrew</option>
+            <option value="he-en" data-i18n="heToEn">Hebrew → English</option>
+            <option value="mixed" data-i18n="mixed">Mixed directions</option>
+          </select></label>
+          <label><span data-i18n="sessionLength">Question count</span><select id="quizLength"><option value="10" selected>10</option><option value="20">20</option><option value="all">All practice words</option></select></label>
+        </div>
+      </details>
+      <div id="quizArea" class="panel quiz-result-area"><div class="empty"><strong data-i18n="readyQuiz">Ready when you are</strong><span data-i18n="readyQuizDesc">Press start when you're ready.</span></div></div>
     </section>
 
     <section class="page" id="page-games">
       <h2 class="page-title" data-i18n="gamesTitle">Word games</h2>
       <p class="page-sub" data-i18n="gamesSub">A playful way to strengthen your memory.</p>
-      <div class="game-grid">
-        <button class="action-card" id="startMatch"><span class="action-icon" aria-hidden="true">🧩</span><b data-i18n="matchGame">Word Match</b><small data-i18n="matchDesc">Match English words with their Hebrew meanings.</small></button>
-        <button class="action-card" id="startScramble"><span class="action-icon" aria-hidden="true">🔤</span><b data-i18n="scrambleGame">Word Scramble</b><small data-i18n="scrambleDesc">Rearrange the letters to build the word.</small></button>
-        <button class="action-card" id="startQuick"><span class="action-icon" aria-hidden="true">⚡</span><b data-i18n="quickGame">Quick Quiz</b><small data-i18n="quickDesc">A short, fast round of questions.</small></button>
-        <button class="action-card" id="startReviewGame"><span class="action-icon" aria-hidden="true">🔁</span><b data-i18n="reviewGame">Mistake review</b><small data-i18n="reviewGameDesc">Practise the words you got wrong.</small></button>
+      <div class="simple-menu-list">
+        <button class="menu-row" id="startMatch"><span class="menu-symbol">🧩</span><span><b data-i18n="matchGame">Word Match</b><small data-i18n="matchDesc">Match English words with their Hebrew meanings.</small></span><span>›</span></button>
+        <button class="menu-row" id="startScramble"><span class="menu-symbol">🔤</span><span><b data-i18n="scrambleGame">Word Scramble</b><small data-i18n="scrambleDesc">Rearrange the letters to build the word.</small></span><span>›</span></button>
+        <button class="menu-row" id="startQuick"><span class="menu-symbol">⚡</span><span><b data-i18n="quickGame">Quick Quiz</b><small data-i18n="quickDesc">A short, fast round of questions.</small></span><span>›</span></button>
+        <button class="menu-row" id="startReviewGame"><span class="menu-symbol">↻</span><span><b data-i18n="reviewGame">Mistake review</b><small data-i18n="reviewGameDesc">Practise the words you got wrong.</small></span><span>›</span></button>
       </div>
       <div id="gameArea" style="margin-top:16px"></div>
     </section>
@@ -478,18 +579,31 @@ body{
     <section class="page" id="page-words">
       <h2 class="page-title" data-i18n="wordsTitle">Your word list</h2>
       <p class="page-sub" data-i18n="wordsSub">Search all 480 entries and set your own learning status.</p>
-      <div class="toolbar">
-        <input class="search-input" id="wordSearch" type="search" placeholder="Search English or Hebrew…" autocomplete="off">
-        <select id="wordStatusFilter">
+      <input class="search-input" id="wordSearch" type="search" placeholder="Search English or Hebrew…" autocomplete="off">
+      <details class="quiet-options">
+        <summary id="wordFilterLabel">Filter words</summary>
+        <div class="options-body"><label><span data-i18n="filterLabel">Word group</span><select id="wordStatusFilter">
           <option value="all" data-i18n="filterAll">All words</option>
           <option value="new" data-i18n="filterNew">New words</option>
           <option value="learning" data-i18n="filterLearning">Learning</option>
           <option value="almost" data-i18n="filterAlmost">Almost mastered</option>
           <option value="mastered" data-i18n="filterMastered">Mastered</option>
-        </select>
-      </div>
+        </select></label></div>
+      </details>
       <div id="wordList" class="word-list"></div>
       <div id="wordListCount" class="round-count"></div>
+    </section>
+
+    <section class="page" id="page-more">
+      <h2 class="page-title" id="moreTitle">More ways to study</h2>
+      <p class="page-sub" id="moreDesc">Choose an extra activity. The main study tools stay simple.</p>
+      <div class="simple-menu-list more-list">
+        <button class="menu-row" data-go="games"><span class="menu-symbol">🎮</span><span><b data-i18n="moreGames">Word games</b><small data-i18n="moreGamesDesc">Play and remember</small></span><span>›</span></button>
+        <button class="menu-row" data-go="words"><span class="menu-symbol">📖</span><span><b data-i18n="moreWords">Word list</b><small data-i18n="moreWordsDesc">Find a word and update its status</small></span><span>›</span></button>
+        <button class="menu-row" id="startDiagnostic"><span class="menu-symbol">◉</span><span><b data-i18n="moreDiagnostic">Quick level check</b><small data-i18n="moreDiagnosticDesc">20 questions to check what you know</small></span><span>›</span></button>
+        <button class="menu-row" data-go="quiz" data-mode="exam"><span class="menu-symbol">📝</span><span><b data-i18n="moreExam">Exam simulation</b><small data-i18n="moreExamDesc">Try a longer test</small></span><span>›</span></button>
+        <button class="menu-row" data-go="settings"><span class="menu-symbol">⚙</span><span><b data-i18n="moreSettings">Settings and backup</b><small data-i18n="moreSettingsDesc">Language, appearance and saved progress</small></span><span>›</span></button>
+      </div>
     </section>
 
     <section class="page" id="page-settings">
@@ -527,7 +641,10 @@ const POS = {
 };
 const T = {
  en:{
-  navHome:"Home",navLearn:"Learn",navQuiz:"Quiz",navGames:"Games",navWords:"Words",
+  navHome:"Home",navLearn:"Learn",navQuiz:"Practice",navGames:"Games",navWords:"Words",navMore:"More",
+  homeMasteredLabel:"Words mastered",homeRemaining:"words left to learn",homeLearnLabel:"Start learning",homeLearnDesc:"Study with simple flashcards",homeQuickLabel:"Quick practice",homeQuickDesc:"10 multiple-choice questions",homeMoreLabel:"More ways to study",
+  moreTitle:"More ways to study",moreDesc:"Choose an extra activity. The main study tools stay simple.",moreGames:"Word games",moreGamesDesc:"Play and remember",moreWords:"Word list",moreWordsDesc:"Find a word and update its status",moreDiagnostic:"Quick level check",moreDiagnosticDesc:"20 questions to check what you know",moreExam:"Exam simulation",moreExamDesc:"Try a longer test",moreSettings:"Settings and backup",moreSettingsDesc:"Language, appearance and saved progress",
+  learnOptionsLabel:"Study options",quizOptionsLabel:"More options",wordFilterLabel:"Filter words",filterLabel:"Word group",sessionLength:"Number of questions",directionLabel:"Question direction",quizPrompt:"A short round is a great way to remember more.",quizStartHint:"10 questions · your progress is saved",
   mastered:"Mastered",learning:"Learning",notKnown:"Not known yet",totalWords:"Total words",
   heroKicker:"YOUR EXAM IS COMING",heroTitle:"Ready to master your vocabulary?",heroText:"Learn the words you need, practise the difficult ones and track your progress.",
   progressLabel:"Overall progress",startLearning:"Start learning →",quickTitle:"Choose your practice",quickSub:"A few focused minutes can make a difference.",
@@ -561,7 +678,10 @@ const T = {
   selectMode:"Choose a practice mode",noChoices:"Not enough words for this mode."
  },
  he:{
-  navHome:"ראשי",navLearn:"לימוד",navQuiz:"תרגול",navGames:"משחקים",navWords:"מילים",
+  navHome:"ראשי",navLearn:"לימוד",navQuiz:"תרגול",navGames:"משחקים",navWords:"מילים",navMore:"עוד",
+  homeMasteredLabel:"מילים שכבר יודעים",homeRemaining:"מילים נשארו ללמידה",homeLearnLabel:"מתחילים ללמוד",homeLearnDesc:"לומדים בעזרת כרטיסיות פשוטות",homeQuickLabel:"תרגול מהיר",homeQuickDesc:"10 שאלות אמריקאיות",homeMoreLabel:"אפשרויות לימוד נוספות",
+  moreTitle:"אפשרויות נוספות",moreDesc:"כאן נמצאות פעילויות נוספות. כלי הלמידה הראשיים נשארים פשוטים.",moreGames:"משחקי מילים",moreGamesDesc:"משחקים וזוכרים",moreWords:"רשימת מילים",moreWordsDesc:"מוצאים מילה ומעדכנים את מצב הלמידה",moreDiagnostic:"בדיקת רמה מהירה",moreDiagnosticDesc:"20 שאלות לבדיקת מה שכבר יודעים",moreExam:"הדמיית מבחן",moreExamDesc:"מתרגלים במבחן ארוך יותר",moreSettings:"הגדרות וגיבוי",moreSettingsDesc:"שפה, מראה האתר ושמירת ההתקדמות",
+  learnOptionsLabel:"אפשרויות לימוד",quizOptionsLabel:"אפשרויות נוספות",wordFilterLabel:"סינון מילים",filterLabel:"קבוצת מילים",sessionLength:"מספר שאלות",directionLabel:"כיוון השאלות",quizPrompt:"סבב קצר של שאלות עוזר לזכור עוד מילים.",quizStartHint:"10 שאלות · ההתקדמות נשמרת",
   mastered:"שולט",learning:"בתהליך",notKnown:"עדיין לא יודע",totalWords:"סך המילים",
   heroKicker:"המבחן מתקרב",heroTitle:"מוכנים לשלוט בכל המילים?",heroText:"למדו את המילים שצריך, תרגלו את הקשות ועקבו אחרי ההתקדמות.",
   progressLabel:"ההתקדמות הכללית",startLearning:"מתחילים ללמוד ←",quickTitle:"איך תרצו לתרגל?",quickSub:"כמה דקות של תרגול ממוקד יכולות לעשות הבדל.",
@@ -597,7 +717,7 @@ const T = {
 };
 
 const STORE_KEY="vocabularyMasterProgress_v1";
-let state={lang:"en",theme:"dark",statuses:{},mistakes:[],history:[],diagnosticDone:false};
+let state={lang:"he",theme:"light",statuses:{},mistakes:[],history:[],diagnosticDone:false};
 let learnSession=[],learnIndex=0,quizSession=[],quizIndex=0,quizScore=0,quizAnswered=false,quizMode="normal";
 let matchRound=[],matchSelected=null,matchCount=0,scrambleWord=null,quickFromGame=false;
 const $=id=>document.getElementById(id);
@@ -633,33 +753,45 @@ function applySettings(){
  document.body.dataset.theme=state.theme;
  document.documentElement.lang=state.lang==="he"?"he":"en";
  document.documentElement.dir=state.lang==="he"?"rtl":"ltr";
- $("langToggle").textContent=state.lang==="en"?"עברית":"English";
- $("themeToggle").textContent=state.theme==="dark"?"☀":"☾";
- $("themeToggle").setAttribute("aria-label",state.theme==="dark"?"Switch to light theme":"Switch to dark theme");
- $("settingsLang").textContent=state.lang==="en"?"English":"עברית";
- $("settingsTheme").textContent=state.theme==="dark"?tr("dark"):tr("light");
+ const put=(id,value)=>{const el=$(id);if(el)el.textContent=value;};
+ put("langToggle",state.lang==="en"?"עברית":"English");
+ put("themeToggle",state.theme==="dark"?"☀":"☾");
+ if($("themeToggle"))$("themeToggle").setAttribute("aria-label",state.theme==="dark"?"Switch to light theme":"Switch to dark theme");
+ put("settingsLang",state.lang==="en"?"English":"עברית");
+ put("settingsTheme",state.theme==="dark"?tr("dark"):tr("light"));
  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(T[state.lang][k])el.textContent=tr(k);});
- $("wordSearch").placeholder=tr("searchPlaceholder");
- $("heroKicker").textContent=tr("heroKicker");$("heroTitle").textContent=tr("heroTitle");$("heroText").textContent=tr("heroText");
- $("progressLabel").textContent=tr("progressLabel");$("heroStart").textContent=tr("startLearning");
- $("quickTitle").textContent=tr("quickTitle");$("quickSub").textContent=tr("quickSub");
- $("dailyTitle").textContent=tr("dailyTitle");$("dailySub").textContent=tr("dailySub");
- $("diagnosticTitle").textContent=tr("diagnosticTitle");$("diagnosticText").textContent=tr("diagnosticText");$("startDiagnostic").textContent=tr("startDiagnostic");
- $("privacyNote").textContent=tr("privacyNote");
- $("footerNote").textContent=`Vocabulary Master · ${TOTAL} source entries · One HTML file`;
+ if($("wordSearch"))$("wordSearch").placeholder=tr("searchPlaceholder");
+ put("heroKicker",state.lang==="he"?"מילים קטנות. התקדמות גדולה.":"YOUR WORDS. YOUR PACE.");
+ put("heroTitle",state.lang==="he"?"בואו ללמוד קצת היום.":"Let's learn a little today.");
+ put("heroText",state.lang==="he"?"כמה דקות בכל פעם יעזרו לכם לזכור יותר.":"A few minutes at a time will help you remember more.");
+ put("progressLabel",tr("homeMasteredLabel"));
+ put("homeMasteredLabel",tr("homeMasteredLabel"));
+ put("homeRemaining",`${TOTAL-Number($("statMastered")?.textContent||0)} ${tr("homeRemaining")}`);
+ put("homeLearnLabel",tr("homeLearnLabel"));put("homeLearnDesc",tr("homeLearnDesc"));
+ put("homeQuickLabel",tr("homeQuickLabel"));put("homeQuickDesc",tr("homeQuickDesc"));put("homeMoreLabel",tr("homeMoreLabel"));
+ put("moreTitle",tr("moreTitle"));put("moreDesc",tr("moreDesc"));
+ put("learnOptionsLabel",tr("learnOptionsLabel"));put("quizOptionsLabel",tr("quizOptionsLabel"));put("wordFilterLabel",tr("wordFilterLabel"));
+ put("quizPrompt",tr("quizPrompt"));put("quizStartHint",tr("quizStartHint"));
+ put("privacyNote",tr("privacyNote"));
+ put("footerNote",`Vocabulary Master · ${TOTAL} source entries · One HTML file`);
  renderStats();renderWordList();renderLearn();
 }
 function renderStats(){
  const counts={new:0,learning:0,almost:0,mastered:0};
  WORDS.forEach(w=>counts[getStatus(w.id)]++);
- const done=counts.mastered, pct=Math.round(done/TOTAL*100);
- $("statMastered").textContent=done;$("statLearning").textContent=counts.learning+counts.almost;
- $("statNew").textContent=counts.new;$("statTotal").textContent=TOTAL;
- $("progressPct").textContent=pct+"%";$("progressBar").style.width=pct+"%";
+ const done=counts.mastered,pct=Math.round(done/TOTAL*100);
+ if($("statMastered"))$("statMastered").textContent=done;
+ if($("statLearning"))$("statLearning").textContent=counts.learning+counts.almost;
+ if($("statNew"))$("statNew").textContent=counts.new;
+ if($("statTotal"))$("statTotal").textContent=TOTAL;
+ if($("progressPct"))$("progressPct").textContent=pct+"%";
+ if($("progressBar"))$("progressBar").style.width=pct+"%";
+ if($("homeRemaining"))$("homeRemaining").textContent=`${TOTAL-done} ${tr("homeRemaining")}`;
 }
 function go(page){
  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+page));
- document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+ const navPage=["games","words","settings"].includes(page)?"more":page;
+ document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===navPage));
  window.scrollTo({top:0,behavior:"smooth"});
  if(page==="words")renderWordList();if(page==="learn")renderLearn();
 }
@@ -823,6 +955,7 @@ function init(){
  document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=()=>go(b.dataset.page));
  document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{go(b.dataset.go);if(b.dataset.mode==="exam")startQuiz("exam");if(b.dataset.mode==="review")startQuiz("review");});
  $("heroStart").onclick=()=>go("learn");
+ $("homeQuickQuiz").onclick=()=>{go("quiz");startQuiz("normal",10);};
  $("langToggle").onclick=()=>{state.lang=state.lang==="en"?"he":"en";save();applySettings();};
  $("themeToggle").onclick=()=>{state.theme=state.theme==="dark"?"light":"dark";save();applySettings();};
  $("settingsOpen").onclick=()=>go("settings");
@@ -831,7 +964,7 @@ function init(){
  $("learnFilter").onchange=()=>{learnSession=[];learnIndex=0;renderLearn();};
  $("learnCount").onchange=()=>{learnSession=[];learnIndex=0;renderLearn();};
  $("shuffleLearn").onclick=()=>{learnSession=shuffle(listForFilter($("learnFilter").value)).slice(0,$("learnCount").value==="all"?TOTAL:Number($("learnCount").value));learnSession.sourceFilter=$("learnFilter").value;learnIndex=0;renderLearn();};
- $("startQuiz").onclick=()=>startQuiz("normal");
+ $("startQuiz").onclick=()=>startQuiz("normal",10);
  $("startDiagnostic").onclick=()=>showModal(tr("diagnosticTitle"),tr("diagnosticIntro"),[{label:tr("cancel")},{label:tr("begin"),primary:true,run:()=>startQuiz("diagnostic",20)}]);
  $("startMatch").onclick=startMatch;$("startScramble").onclick=startScramble;
  $("startQuick").onclick=()=>startQuiz("normal",10);
