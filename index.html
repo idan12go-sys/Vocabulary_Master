@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101522">
 <meta name="description" content="Vocabulary Master — practise, play and prepare for your English vocabulary test.">
-<title>Vocabulary Master — Simple Edition</title>
+<title>Vocabulary Master — Easy Navigation</title>
 <style>
 :root{
   --bg:#0d1220;--surface:#151d2e;--surface2:#1c2740;--surface3:#24314d;
@@ -529,6 +529,39 @@ select,input{min-height:48px;border-radius:13px;padding:10px 13px;background:var
   }
 }
 
+
+
+/* ===== EASY NAVIGATION EDITION: one clear route through the app ===== */
+.bottom-nav{display:none!important}
+.app{padding-bottom:32px!important}
+@media(max-width:520px){.app{padding-bottom:26px!important}}
+.simple-back-row{margin:0 0 16px;}
+.simple-back-row[hidden]{display:none!important}
+.simple-back-btn{
+  display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:9px 15px;
+  border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  color:var(--text);font-size:14px;font-weight:800;box-shadow:0 3px 12px #00000009;
+  transition:transform .16s,background .16s,border-color .16s;
+}
+.simple-back-btn span:first-child{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:var(--surface2);font-size:16px;color:var(--accent)}
+.simple-back-btn:active{transform:scale(.97)}
+.simple-back-btn:hover{border-color:var(--accent);background:var(--surface2)}
+#page-home .welcome-block{max-width:760px}
+#page-home .home-actions{max-width:740px;margin-inline:auto}
+#page-home .main-action{min-height:76px}
+#page-home .text-action{
+  display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:54px;
+  margin-top:8px;padding:12px 16px;border:1px solid var(--line);border-radius:15px;
+  background:var(--surface);color:var(--text);font-size:15px;font-weight:850;
+}
+#page-home .text-action span:last-child{font-size:20px;color:var(--accent)}
+#page-more .more-list{max-width:760px;margin-inline:auto}
+#page-more .menu-row{min-height:76px;padding:16px 18px}
+#page-more .menu-row small{line-height:1.45}
+.page.active{animation:easyPageIn .2s ease-out both}
+@keyframes easyPageIn{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.page.active{animation:none}}
+
 </style>
 </head>
 <body data-theme="dark">
@@ -553,6 +586,11 @@ select,input{min-height:48px;border-radius:13px;padding:10px 13px;background:var
   </nav>
 
   <main>
+    <div id="simpleBackRow" class="simple-back-row" hidden>
+      <button id="simpleBackBtn" class="simple-back-btn" type="button">
+        <span aria-hidden="true">⌂</span><span id="simpleBackLabel">Back to home</span>
+      </button>
+    </div>
     <section class="page active" id="page-home">
       <div class="welcome-block">
         <p class="eyebrow" id="heroKicker">YOUR WORDS. YOUR PACE.</p>
@@ -694,8 +732,8 @@ const POS = {
 const T = {
  en:{
   navHome:"Home",navLearn:"Learn",navQuiz:"Practice",navGames:"Games",navWords:"Words",navMore:"More",
-  homeMasteredLabel:"Words mastered",homeRemaining:"words left to learn",homeLearnLabel:"Start learning",homeLearnDesc:"Study with simple flashcards",homeQuickLabel:"Quick practice",homeQuickDesc:"10 multiple-choice questions",homeMoreLabel:"More ways to study",
-  moreTitle:"More ways to study",moreDesc:"Choose an extra activity. The main study tools stay simple.",moreGames:"Word games",moreGamesDesc:"Play and remember",moreWords:"Word list",moreWordsDesc:"Find a word and update its status",moreDiagnostic:"Quick level check",moreDiagnosticDesc:"20 questions to check what you know",moreExam:"Exam simulation",moreExamDesc:"Try a longer test",moreSettings:"Settings and backup",moreSettingsDesc:"Language, appearance and saved progress",
+  homeMasteredLabel:"Words mastered",homeRemaining:"words left to learn",homeLearnLabel:"Start learning",homeLearnDesc:"Study with simple flashcards",homeQuickLabel:"Quick practice",homeQuickDesc:"10 multiple-choice questions",homeMoreLabel:"All tools",
+  moreTitle:"All tools",moreDesc:"Open a game, find a word or try a longer test.",moreGames:"Word games",moreGamesDesc:"Play and remember",moreWords:"Word list",moreWordsDesc:"Find a word and update its status",moreDiagnostic:"Quick level check",moreDiagnosticDesc:"20 questions to check what you know",moreExam:"Exam simulation",moreExamDesc:"Try a longer test",moreSettings:"Settings and backup",moreSettingsDesc:"Language, appearance and saved progress",
   learnOptionsLabel:"Study options",quizOptionsLabel:"More options",wordFilterLabel:"Filter words",filterLabel:"Word group",sessionLength:"Number of questions",directionLabel:"Question direction",quizPrompt:"A short round is a great way to remember more.",quizStartHint:"10 questions · your progress is saved",
   mastered:"Mastered",learning:"Learning",notKnown:"Not known yet",totalWords:"Total words",
   heroKicker:"YOUR EXAM IS COMING",heroTitle:"Ready to master your vocabulary?",heroText:"Learn the words you need, practise the difficult ones and track your progress.",
@@ -731,8 +769,8 @@ const T = {
  },
  he:{
   navHome:"ראשי",navLearn:"לימוד",navQuiz:"תרגול",navGames:"משחקים",navWords:"מילים",navMore:"עוד",
-  homeMasteredLabel:"מילים שכבר יודעים",homeRemaining:"מילים נשארו ללמידה",homeLearnLabel:"מתחילים ללמוד",homeLearnDesc:"לומדים בעזרת כרטיסיות פשוטות",homeQuickLabel:"תרגול מהיר",homeQuickDesc:"10 שאלות אמריקאיות",homeMoreLabel:"אפשרויות לימוד נוספות",
-  moreTitle:"אפשרויות נוספות",moreDesc:"כאן נמצאות פעילויות נוספות. כלי הלמידה הראשיים נשארים פשוטים.",moreGames:"משחקי מילים",moreGamesDesc:"משחקים וזוכרים",moreWords:"רשימת מילים",moreWordsDesc:"מוצאים מילה ומעדכנים את מצב הלמידה",moreDiagnostic:"בדיקת רמה מהירה",moreDiagnosticDesc:"20 שאלות לבדיקת מה שכבר יודעים",moreExam:"הדמיית מבחן",moreExamDesc:"מתרגלים במבחן ארוך יותר",moreSettings:"הגדרות וגיבוי",moreSettingsDesc:"שפה, מראה האתר ושמירת ההתקדמות",
+  homeMasteredLabel:"מילים שכבר יודעים",homeRemaining:"מילים נשארו ללמידה",homeLearnLabel:"מתחילים ללמוד",homeLearnDesc:"לומדים בעזרת כרטיסיות פשוטות",homeQuickLabel:"תרגול מהיר",homeQuickDesc:"10 שאלות אמריקאיות",homeMoreLabel:"כל האפשרויות",
+  moreTitle:"כל האפשרויות",moreDesc:"משחקים, רשימת מילים ומבחנים — הכול במקום אחד.",moreGames:"משחקי מילים",moreGamesDesc:"משחקים וזוכרים",moreWords:"רשימת מילים",moreWordsDesc:"מוצאים מילה ומעדכנים את מצב הלמידה",moreDiagnostic:"בדיקת רמה מהירה",moreDiagnosticDesc:"20 שאלות לבדיקת מה שכבר יודעים",moreExam:"הדמיית מבחן",moreExamDesc:"מתרגלים במבחן ארוך יותר",moreSettings:"הגדרות וגיבוי",moreSettingsDesc:"שפה, מראה האתר ושמירת ההתקדמות",
   learnOptionsLabel:"אפשרויות לימוד",quizOptionsLabel:"אפשרויות נוספות",wordFilterLabel:"סינון מילים",filterLabel:"קבוצת מילים",sessionLength:"מספר שאלות",directionLabel:"כיוון השאלות",quizPrompt:"סבב קצר של שאלות עוזר לזכור עוד מילים.",quizStartHint:"10 שאלות · ההתקדמות נשמרת",
   mastered:"שולט",learning:"בתהליך",notKnown:"עדיין לא יודע",totalWords:"סך המילים",
   heroKicker:"המבחן מתקרב",heroTitle:"מוכנים לשלוט בכל המילים?",heroText:"למדו את המילים שצריך, תרגלו את הקשות ועקבו אחרי ההתקדמות.",
@@ -806,6 +844,7 @@ function applySettings(){
  document.documentElement.lang=state.lang==="he"?"he":"en";
  document.documentElement.dir=state.lang==="he"?"rtl":"ltr";
  const put=(id,value)=>{const el=$(id);if(el)el.textContent=value;};
+ put("simpleBackLabel",state.lang==="he"?"חזרה למסך הראשי":"Back to home");
  put("langToggle",state.lang==="en"?"עברית":"English");
  put("themeToggle",state.theme==="dark"?"☀":"☾");
  if($("themeToggle"))$("themeToggle").setAttribute("aria-label",state.theme==="dark"?"Switch to light theme":"Switch to dark theme");
@@ -842,10 +881,13 @@ function renderStats(){
 }
 function go(page){
  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+page));
- const navPage=["games","words","settings"].includes(page)?"more":page;
- document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===navPage));
+ const app=document.querySelector(".app");
+ if(app)app.classList.toggle("has-subpage",page!=="home");
+ const back=$("simpleBackRow");
+ if(back)back.hidden=page==="home";
  window.scrollTo({top:0,behavior:"smooth"});
- if(page==="words")renderWordList();if(page==="learn")renderLearn();
+ if(page==="words")renderWordList();
+ if(page==="learn")renderLearn();
 }
 function listForFilter(filter){
  return WORDS.filter(w=>{
@@ -1004,6 +1046,7 @@ function init(){
  load();
  WORDS.forEach((w,i)=>w.id=i);
  applySettings();
+ const backBtn=$("simpleBackBtn");if(backBtn)backBtn.onclick=()=>go("home");
  document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=()=>go(b.dataset.page));
  document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{go(b.dataset.go);if(b.dataset.mode==="exam")startQuiz("exam");if(b.dataset.mode==="review")startQuiz("review");});
  $("heroStart").onclick=()=>go("learn");
